@@ -1,41 +1,161 @@
-{% include 'includes/head.swig' %}
-<div class="random-center hide-area">
-  <div id="random-index">
-    <div class="center-field">
-      <img class="avatar" alt="blog avatar" src="{{ url_for(config.avatar || theme.avatar) }}" width=120 height=120 onClick="openUserCard()">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">个人博客</a>
+      </h1>
+      
     </div>
-    <div class="center-field">
-      <div class="title" onClick="openUserCard()">{{ config.title }}</div>
-      <div class="sub-title" onClick="openUserCard()">{{ config.subtitle }}</div>
-    </div>
-    <hr >
-    <div class="center-field">
-      <ul class="index-nav-link">
-        {% set menu = config.menu || theme.menu %}
-        {% for key in Object.keys(menu)  %}
-          {% if menu[key] != '/'  %}
-            <li><a href="{{ url_for(menu[key]) }}">{{ key }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-      {% include 'includes/social-icon.swig' %}
-      {% set homepageArticleCount = config.homepageArticleCount || theme.homepageArticleCount %}
-      {% if homepageArticleCount > 0 %}
-      <div class="index-article-container">
-        <div class="index-article-list">
-          {% set allPosts = site.posts.sort('date', 'desc') %}
-          {% for idx, postItem in allPosts %}
-            {% if idx < homepageArticleCount %}
-            {% include 'includes/post-title-item.swig' %}
-            {% endif %}
-          {% endfor %}
-        </div>
-        <div class="show-all-link">
-          <a href="/archives">{{__('show_all')}} >>></a>
-        </div>
-      </div>
-      {% endif %}
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
     </div>
   </div>
-</div>
-{% include 'includes/footer.swig' %}
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/05/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-10-05T01:08:54.886Z" itemprop="datePublished">2024-10-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/05/hello-world/">个人博客介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>欢迎各位浏览我的个人博客，本博客致力于各类科学活动、包含星空观测、以及21cm银河氢普线的观测和研究、程序编写和网站建设、摄影作品存放发布等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zheng0119.github.io.git/2024/10/05/hello-world/" data-id="cm1w0fryl00010kvmhgdg5htp" data-title="个人博客介绍" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+</section>
+        <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/05/hello-world/">个人博客介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2024 By Autoload<br>
+      Driven - <a href="https://hexo.io/" target="_blank">Hexo</a>|Theme - <a href="https://github.com/autoload/hexo-theme-auto" target="_blank">Auto</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

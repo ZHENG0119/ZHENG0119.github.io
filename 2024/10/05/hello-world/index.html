@@ -1,56 +1,158 @@
-{% extends 'includes/layout.swig' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>个人博客介绍 | 个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-{% block body %}
-  {% include 'math/index.swig' %}
-  <article id="post">
-    <h1>{{ page.title || __('without_title') }}</h1>
-    <p class="page-title-sub">
-      <span id = "post-title-date">{{ __('created_at') }} {{ date(page.date) }}</span>
-      {% if page.date !== page.updated %}
-        <span id = "post-title-updated">{{ __('updated_at') }} {{ date(page.updated) }}</span>
-      {% endif %}
-      {% if page.categories.length %}
-      <span id = "post-title-categories">{{ __('category_title') }}
-      {% set i = 0 %}
-      {% for cat in page.categories %}
-        {% if i !== 0 %}
-          {{'/'}}
-        {% endif %}
-        {% set i = i + 1 %}
-        <a href="{{ url_for(cat.path) }}">{{ cat.name }}</a>
-      {% endfor %}
-      </span>
-      {% endif %}
-      {% if page.tags.length %}
-        <span id = "post-title-tags">
-          {{ __('tag_title') }}
-          {% set i = 0 %}
-          {% for tag in page.tags %}
-            {% if i !== 0 %}
-              {{'/'}}
-            {% endif %}
-            {% set i = i + 1 %}
-            <a href="{{ url_for(tag.path) }}">{{ tag.name }}</a>
-          {% endfor %}
-        </span>
-      {% endif %}
-      <span id="/{{ page.path }}" class="leancloud-visitors" data-flag-title="{{ page.title }}">
-        <i class="leancloud-visitors-count"></i>
-        <em class="post-meta-item-text"> views </em>
-      </span>
-    </p>
-    {% if page.photos.length %}
-      {% include 'includes/gallery.swig' %}
-    {% endif %}
-    {% autoescape false %}{{ page.content }}{% endautoescape %}
-  </article>
-  {% include 'includes/toc.swig' %}
-  {% if page.comments && (theme.valine.enable) %}
-    {% include 'includes/valine.swig' %}
-  {% endif %}
-  {% include 'includes/pagination.swig' %}
-  {% include 'includes/jiathis.swig' %}
-  {% if page.comments && (theme.gitalk.enable) %}
-    {% include 'includes/gitalk.swig' %}
-  {% endif %}
-{% endblock %}
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/05/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2024-10-05T01:08:54.886Z" itemprop="datePublished">2024-10-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      个人博客介绍
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>欢迎各位浏览我的个人博客，本博客致力于各类科学活动、包含星空观测、以及21cm银河氢普线的观测和研究、程序编写和网站建设、摄影作品存放发布等。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zheng0119.github.io.git/2024/10/05/hello-world/" data-id="cm1w0fryl00010kvmhgdg5htp" data-title="个人博客介绍" class="article-share-link">Teilen</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/05/hello-world/">个人博客介绍</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li></ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2024 By Autoload<br>
+      Driven - <a href="https://hexo.io/" target="_blank">Hexo</a>|Theme - <a href="https://github.com/autoload/hexo-theme-auto" target="_blank">Auto</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
