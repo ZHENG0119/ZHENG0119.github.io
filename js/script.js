@@ -1,52 +1,142 @@
-(function($){
+window.addEventListener("DOMContentLoaded", function() {
+  const html            = document.querySelector("html");
+  const navBtn          = document.querySelector(".navbar-btn");
+  const navList         = document.querySelector(".navbar-list");
+  const backToTopFixed  = document.querySelector(".back-to-top-fixed");
+  let lastTop           = 0;
+  let lastRefreshTime   = 0;
+  let frameCount        = 0;
+  let refreshRate       = 0;
+  let theme             = window.localStorage.getItem('theme') || '';
 
-  // Caption
-  $('.article-entry').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox') || $(this).parent().is('a')) return;
+  theme && html.classList.add(theme)
 
-      var alt = this.alt;
 
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+  /**
+   * 初始化刷新率估计
+   */
+  const estimateRefreshRate = () => {
+      const currentTime = performance.now();
+      if (currentTime - lastRefreshTime >= 1000) { // fps
+          refreshRate = frameCount;
+          frameCount = 0;
+          lastRefreshTime = currentTime;
+      } else {
+          frameCount++;
+      }
+      requestAnimationFrame(estimateRefreshRate);
+  }
+  
+  estimateRefreshRate();
 
-      $(this).wrap('<a href="' + this.src + '" data-fancybox=\"gallery\" data-caption="' + alt + '"></a>')
-    });
-
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-
-  if ($.fancybox){
-    $('.fancybox').fancybox();
+  const goScrollTop = () => {
+    let currentTop = getScrollTop()
+    let speed = Math.floor(-currentTop / (refreshRate / 6))
+    if (currentTop > lastTop + 0.5 || currentTop < lastTop - 0.5 ) {
+      // interrupt the animation
+      return lastTop = 0
+    }
+    let distance = currentTop + speed;
+    lastTop = distance;
+    document.documentElement.scrollTop = distance;
+    distance > 0 && window.requestAnimationFrame(goScrollTop)
   }
 
-  // Mobile nav
-  var $container = $('#container'),
-    isMobileNavAnim = false,
-    mobileNavAnimDuration = 200;
-
-  var startMobileNavAnim = function(){
-    isMobileNavAnim = true;
-  };
-
-  var stopMobileNavAnim = function(){
-    setTimeout(function(){
-      isMobileNavAnim = false;
-    }, mobileNavAnimDuration);
+  const toggleBackToTopBtn = (top) => {
+    top = top || getScrollTop()
+    if (top >= 100) {
+      backToTopFixed.classList.add("show")
+    } else {
+      backToTopFixed.classList.remove("show")
+    }
   }
 
-  $('#main-nav-toggle').on('click', function(){
-    if (isMobileNavAnim) return;
+  toggleBackToTopBtn()
 
-    startMobileNavAnim();
-    $container.toggleClass('mobile-nav-on');
-    stopMobileNavAnim();
+  // theme light click
+  document.querySelector('#theme-light').addEventListener('click', function () {
+    html.classList.remove('theme-dark')
+    html.classList.add('theme-light')
+    window.localStorage.setItem('theme', 'theme-light')
+  })
+
+  // theme dark click
+  document.querySelector('#theme-dark').addEventListener('click', function () {
+    html.classList.remove('theme-light')
+    html.classList.add('theme-dark')
+    window.localStorage.setItem('theme', 'theme-dark')
+  })
+
+  // theme auto click
+  document.querySelector('#theme-auto').addEventListener('click', function() {
+    html.classList.remove('theme-light')
+    html.classList.remove('theme-dark')
+    window.localStorage.setItem('theme', '')
+  })
+
+  // mobile nav click
+  navBtn.addEventListener("click", function () {
+    html.classList.toggle("show-mobile-nav");
+    this.classList.toggle("active");
   });
 
-  $('#wrap').on('click', function(){
-    if (isMobileNavAnim || !$container.hasClass('mobile-nav-on')) return;
+  // mobile nav link click
+  navList.addEventListener("click", function (e) {
+    if (e.target.nodeName == "A" && html.classList.contains("show-mobile-nav")) {
+      navBtn.click()
+    }
+  })
 
-    $container.removeClass('mobile-nav-on');
+  // click back to top
+  backToTopFixed.addEventListener("click", function () {
+    lastTop = getScrollTop()
+    goScrollTop()
   });
-})(jQuery);
+
+  window.addEventListener("scroll", function () {
+    toggleBackToTopBtn()
+  }, { passive: true });
+
+  /** handle lazy bg iamge */
+  handleLazyBG();
+});
+
+/**
+ * 获取当前滚动条距离顶部高度
+ *
+ * @returns 距离高度
+ */
+function getScrollTop () {
+  return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+}
+
+function querySelectorArrs (selector) {
+  return Array.from(document.querySelectorAll(selector))
+}
+
+
+function handleLazyBG () {
+  const lazyBackgrounds = querySelectorArrs('[background-image-lazy]')
+  let lazyBackgroundsCount = lazyBackgrounds.length
+  if (lazyBackgroundsCount > 0) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function({ isIntersecting, target }) {
+        if (isIntersecting) {
+          let img = target.dataset.img
+          if (img) {
+            target.style.backgroundImage = `url(${img})`
+          }
+          lazyBackgroundObserver.unobserve(target)
+          lazyBackgroundsCount --
+        }
+        if (lazyBackgroundsCount <= 0) {
+          lazyBackgroundObserver.disconnect()
+        }
+      })
+    })
+
+    lazyBackgrounds.forEach(function(lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground)
+    })
+  }
+}
