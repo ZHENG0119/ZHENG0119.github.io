@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ZHENG0119.github.io</id>
     <title>资源博客网</title>
-    <updated>2024-11-03T06:57:38.420Z</updated>
+    <updated>2024-11-03T07:17:48.798Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ZHENG0119.github.io"/>
     <link rel="self" href="https://ZHENG0119.github.io/atom.xml"/>
@@ -120,10 +120,9 @@
 非正确配置的会出现你现在的位置如下图<br>
 <img src="https://ZHENG0119.github.io/post-images/1730612724837.jpg" alt="" loading="lazy"></p>
 <!-- more -->
-<div>
-注：由于采用非root配置环境
-步数将由传感器采集，无法进行修改。所以需要一款能够自动摇步数的机器。
-可去拼夕夕上买。</div>
+<p>注：由于采用非root配置环境<br>
+步数将由传感器采集，无法进行修改。所以需要一款能够自动摇步数的机器。<br>
+可去拼夕夕上买。</p>
 ]]></content>
     </entry>
     <entry>
