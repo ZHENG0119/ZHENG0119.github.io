@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ZHENG0119.github.io</id>
     <title>资源博客网</title>
-    <updated>2024-11-03T03:22:37.536Z</updated>
+    <updated>2024-11-03T05:49:31.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ZHENG0119.github.io"/>
     <link rel="self" href="https://ZHENG0119.github.io/atom.xml"/>
@@ -10,6 +10,99 @@
     <logo>https://ZHENG0119.github.io/images/avatar.png</logo>
     <icon>https://ZHENG0119.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, 资源博客网</rights>
+    <entry>
+        <title type="html"><![CDATA[体适能破解方案（仅限安卓用户）]]></title>
+        <id>https://ZHENG0119.github.io/post/ti-gua-neng-po-jie-fang-an-jin-xian-an-zhuo-yong-hu/</id>
+        <link href="https://ZHENG0119.github.io/post/ti-gua-neng-po-jie-fang-an-jin-xian-an-zhuo-yong-hu/">
+        </link>
+        <updated>2024-11-03T03:30:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>由于最新体适能可能会监控到模拟软件，这里采用旧版本的体适能来进行破解。<br>
+注：安卓14的部分用户可能会闪退，安卓13的比较适配。<br>
+具体方法和操作如下：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>由于最新体适能可能会监控到模拟软件，这里采用旧版本的体适能来进行破解。<br>
+注：安卓14的部分用户可能会闪退，安卓13的比较适配。<br>
+具体方法和操作如下：</p>
+<!-- more -->
+<p>1.安装链接</p>
+<!-- more -->
+<pre><code>   1.安装链接：
+     如果本链接无法使用可试试下面的
+    2.安装链接:https://share.weiyun.com/zEjYTt7L    
+</code></pre>
+<!-- more -->
+<p>2.安装这两个APP</p>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://ZHENG0119.github.io/post-images/1730608432970.jpg" alt="" loading="lazy"></figure>
+<!-- more -->
+<p>3.点击打开体适能（旧版）</p>
+<!-- more -->
+<p>记住要断网<br>
+<img src="https://ZHENG0119.github.io/post-images/1730609459116.jpg" alt="" loading="lazy"><br>
+弹出来的请检查手机网络，不用管它，点击确定就行了。<br>
+然后填写学校的名称，然后退出清除后台。</p>
+<!-- more -->
+<p>4.重新打开，然后登陆点击我的。</p>
+<!-- more -->
+<p>记住一定要断网，点击我的之后再开网络。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730609874953.jpg" alt="" loading="lazy"><br>
+退出清除后台。</p>
+<!-- more -->
+<p>5.重新打开，点击阳光跑步</p>
+<!-- more -->
+<p>进去软件的时候要断网，然后点击阳光跑步进去之后再开网络。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730610012334.jpg" alt="" loading="lazy"><br>
+将所有权限都要开启。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730610063666.jpg" alt="" loading="lazy"><br>
+<img src="https://ZHENG0119.github.io/post-images/1730610106152.jpg" alt="" loading="lazy"><br>
+开启完成后的权限如图所示：<br>
+<img src="https://ZHENG0119.github.io/post-images/1730610140015.jpg" alt="" loading="lazy"></p>
+<!-- more -->
+<p>6.关闭体适能获取应用列表权限</p>
+<!-- more -->
+<p>方法 1.<br>
+可通过手机自带的应用管理软件打开体适能的应用信息，找到权限管理，点击其他权限，找到获取应用列表，点击拒绝或者关闭。<br>
+方法2.<br>
+可以通过长按体适能APP在弹出的感叹号或者应用信息中按照上述流程进行关闭。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730610526689.jpg" alt="" loading="lazy"><br>
+<img src="https://ZHENG0119.github.io/post-images/1730610622722.jpg" alt="" loading="lazy"></p>
+<!-- more -->
+<p>7.打开fakelocation</p>
+<!-- more -->
+<p>注：如果打开会弹出要更新的话那就断了网然后进去打开。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730610742323.jpg" alt="" loading="lazy"></p>
+<!-- more -->
+<p>8.点击路线模拟</p>
+<!-- more -->
+<p><img src="https://ZHENG0119.github.io/post-images/1730610883569.jpg" alt="" loading="lazy"><br>
+点击＋号，添加路线要自己拉，可以将那个线绕长一点。不过对于经过三个必经点的话尽量拉短一点，后面如果路程数不够的话尽量绕一绕，权限的话基本都要给它开启。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730610989420.jpg" alt="" loading="lazy"><br>
+示例路线图:<br>
+<img src="https://ZHENG0119.github.io/post-images/1730611076248.jpg" alt="" loading="lazy"></p>
+<!-- more -->
+<p>9.配置fakelocation的权限</p>
+<!-- more -->
+<p>顺便将那个省电策略改成无限制。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730611276888.jpg" alt="" loading="lazy"></p>
+<!-- more -->
+<p>10.开发者权限（如果不会开的可评论或者联系我）</p>
+<!-- more -->
+<p>下拉找到选择模拟位置信息应用，启用fakelocation软件。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730611406356.jpg" alt="" loading="lazy"><br>
+如果有下面的弹窗一定要选择切换到NOROOT模式。<br>
+<img src="https://ZHENG0119.github.io/post-images/1730611884051.jpg" alt="" loading="lazy"><br>
+11.测试配置是否可以运行</p>
+<!-- more -->
+<pre><code>  1.开启fakelocation软件的路线模拟并启动模拟
+  2.断网打开体适能，然后不用管其他的弹窗，直接点进阳光跑步
+  3.查看位置是否变化
+  正常配置的如下图
+</code></pre>
+<p><img src="https://ZHENG0119.github.io/post-images/1730612291168.jpg" alt="" loading="lazy"><br>
+非正确配置的会出现你现在的位置如下图<br>
+<img src="https://ZHENG0119.github.io/post-images/1730612724837.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[个人博客测试运行]]></title>
         <id>https://ZHENG0119.github.io/post/ge-ren-bo-ke-ce-shi-yun-xing/</id>
